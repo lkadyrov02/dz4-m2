@@ -1,26 +1,46 @@
 /*1*/
-function positive(num){
-  return num;
-}
-console.log(positive(10, 5));
-console.log(positive(10));
 
+let arr = [20, 3, 4, 5, 50, 100, 19, 200, 5000, 599, 2];
+let min = arr[0];
+
+arr.forEach(function (elem, index) {
+    if(index > 0 ){
+        if(min > elem){
+            min = elem;
+        }
+    }
+});
+console.log(min);
 
 /*2*/
-var symb = "b", str = "aaBBBbbb";
-function count(str, symb) {
-  
-  for (var count = -1, index = 0; index != -1; count++, index = str.toLowerCase().indexOf(symb.toLowerCase(), index +  1));
-  return count
+let str = 'Abrakadabra'
+let letter = ''
+
+let lettersFound = 0
+
+function countChar(str, lett){
+  str = str.toLowerCase()
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === lett.toLowerCase()){
+      lettersFound++
+      console.log(lettersFound);
+    }
+  }
 }
+countChar(str,letter)
 
 /*3*/
 
-console.log((count(str, symb)))
-function num(num1, num2) {
-  const result = (num1 + num2)/2
+const numbers = [10,5,20]
+
+function foo(args){
+  const summa = args.reduce((a , b) => a + b, 0)
+  const length = args.length
+  const result = summa / length
   console.log(result);
 }
+
+foo(numbers)
 
 /*4*/
 
