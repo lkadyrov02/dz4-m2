@@ -1,16 +1,10 @@
 /*1*/
 
-let arr = [20, 3, 4, 5, 50, 100, 19, 200, 5000, 599, 2];
-let min = arr[0];
-
-arr.forEach(function (elem, index) {
-    if(index > 0 ){
-        if(min > elem){
-            min = elem;
-        }
-    }
-});
-console.log(min);
+const min = (a, b) => {
+  let arr = [a, b];
+  return arr.sort((a, b) => a - b)[0];
+};
+console.log(min(4.5, 5))
 
 /*2*/
 let str = 'Abrakadabra'
@@ -31,22 +25,18 @@ countChar(str,letter)
 
 /*3*/
 
-const numbers = [10,5,20]
-
-function foo(args){
-  const summa = args.reduce((a , b) => a + b, 0)
-  const length = args.length
-  const result = summa / length
-  console.log(result);
+function average() {
+  let sum = 0;
+  for (let i = 0; i < arguments[i]; i++ ) sum += arguments[i];
+  return sum === 0 ? sum : sum / arguments.length;
 }
-
-foo(numbers)
+alert( average( 1, 2, 3, 4, 5, 6, 7, 8, 9) )
 
 /*4*/
 
-const words = [6,7,2,1,3,4,9,10];
+const numbers = [6,7,2,1,3,4,9,10];
 
-const result = words.filter(word => word > 5);
+const result = numbers.filter(number => number > 5);
 
 console.log(result);
 
@@ -71,11 +61,12 @@ function reverse(str){
   let i = str.length - 1;
   let result = '';
 
-  while (i >= 0) {
-    result = result + str[i];
-    i = i - 1;
+  while(i >= 0){
+    result += str[i];
+    i--;
   }
 
-  return console.log(result);;
+  return console.log(result);
 };
-reverse('asd')
+
+reverse('abc')
